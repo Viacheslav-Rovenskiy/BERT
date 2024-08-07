@@ -131,7 +131,7 @@ def evaluate(model, embeddings, labels, cv: int = 5) -> List[float]:
 
     return losses
 
-# Пример использования
+# Example
 from transformers import DistilBertModel, DistilBertTokenizer
 
 MODEL_NAME = 'distilbert-base-uncased'
@@ -144,6 +144,6 @@ for tokens, labels in loader:
     embeddings = review_embedding(tokens, bert)
     print(embeddings)
 
-model = LogisticRegression(max_iter=1000)  # Инициализация модели логистической регрессии
+model = LogisticRegression(max_iter=1000)  # Initialization of the logistic regression model
 loss_scores = evaluate(model, embeddings, labels, cv=5)
 print("Cross-Entropy Loss for each fold:", loss_scores)
